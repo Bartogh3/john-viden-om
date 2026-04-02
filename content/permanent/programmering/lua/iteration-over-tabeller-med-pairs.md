@@ -1,6 +1,7 @@
 ---
 id: 202604022353
 titel: Iteration over tabeller med pairs()
+date: 2026-04-02
 sprog: lua
 tags: [programmering, lua]
 relateret: []

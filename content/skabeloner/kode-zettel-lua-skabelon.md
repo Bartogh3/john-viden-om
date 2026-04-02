@@ -1,10 +1,11 @@
 ---
 id: {{date:YYYYMMDDHHmm}}
-titel:
+titel: ""
+date: {{date:YYYY-MM-DD}}
 sprog: lua
 tags: [programmering, lua]
 relateret: []
-oprettet: {{date:YYYY-MM-DD}}
+oprettet: {{date:YYYY-MM-DD HH:mm}}
 ---
 ## Hvad løser dette
 <ét præcist problem eller mønster>

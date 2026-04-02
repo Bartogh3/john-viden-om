@@ -1,6 +1,7 @@
 ---
 id: 202604022350
 titel: Simpel fejlhåndtering med try/except
+date: 2026-04-02
 sprog: python
 tags: [programmering, python]
 relateret: []

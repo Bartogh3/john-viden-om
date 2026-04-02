@@ -1,7 +1,7 @@
 ---
-id: "202604020010"
-title: John Viden Om
-dato: 2026-0
+id: 202604020010
+titel: John Viden Om
+date: 2026-04-02
 tags:
   - journal
   - fleeting

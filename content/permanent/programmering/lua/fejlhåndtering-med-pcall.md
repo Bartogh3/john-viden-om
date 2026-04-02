@@ -1,6 +1,7 @@
 ---
 id: 202604022355
 titel: Fejlhåndtering med pcall()
+date: 2026-04-02
 sprog: lua
 tags: [programmering, lua]
 relateret: []

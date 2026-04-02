@@ -1,6 +1,7 @@
 ---
 id: 202604022349
 titel: Kombinér lister med zip()
+date: 2026-04-02
 sprog: python
 tags: [programmering, python]
 relateret: []

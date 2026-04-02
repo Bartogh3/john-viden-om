@@ -1,6 +1,7 @@
 ---
 id: 202604022348
 titel: Listeforståelse i Python
+date: 2026-04-02
 sprog: python
 tags: [programmering, python]
 relateret: []

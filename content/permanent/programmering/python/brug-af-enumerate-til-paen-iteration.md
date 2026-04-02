@@ -1,6 +1,7 @@
 ---
 id: 202604022345
 titel: Brug af enumerate til pæn iteration
+date: 2026-04-02
 sprog: python
 tags: [programmering, python]
 relateret: []

@@ -2,6 +2,7 @@
 id: 202604022354
 titel: Funktioner som værdier i Lua
 sprog: lua
+date: 2026-04-02
 tags: [programmering, lua]
 relateret: []
 oprettet: 2026-04-02
