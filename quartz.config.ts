@@ -17,7 +17,7 @@ const config: QuartzConfig = {
     },
     locale: "da-DK",
     baseUrl: "bartogh3.github.io/john-viden-om",
-    ignorePatterns: ["private", "templates", ".obsidian"],
+    ignorePatterns: ["private", "skabeloner", ".obsidian"],
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",
