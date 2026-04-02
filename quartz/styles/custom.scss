@@ -1,3 +1,270 @@
 @use "./base.scss";
 
-// put your custom CSS here!
+/* ================================================
+   JOHN VIDEN OM — Zettelkasten kortdesign
+   Leo 🦚 · Team Balder
+   ================================================ */
+
+/* --- Farvepalette & variabler --- */
+:root {
+  --zettel-bg: #faf8f2;
+  --zettel-border: #c8bfa0;
+  --zettel-top-kode: #4a7a5a;
+  --zettel-top-historie: #7a5a3a;
+  --zettel-top-journal: #5a6a8a;
+  --zettel-top-default: #8b7d5a;
+  --zettel-text: #2a2218;
+  --zettel-muted: #9a8c6a;
+  --zettel-link: #6a8a5a;
+  --zettel-tag-bg: #f0ebe0;
+  --zettel-tag-text: #6a5e42;
+  --zettel-code-bg: #1a1a16;
+  --zettel-code-text: #c8d4a8;
+  --zettel-rule: #ddd5b8;
+  --zettel-meta-bg: #f0e8d8;
+  --zettel-meta-border: #c8aa7a;
+  --zettel-meta-text: #7a5a3a;
+  --zettel-font-serif: Georgia, 'Times New Roman', serif;
+  --zettel-font-mono: 'Courier New', Courier, monospace;
+}
+
+/* Mørkt tema */
+:root[saved-theme="dark"] {
+  --zettel-bg: #1e1c17;
+  --zettel-border: #3a3428;
+  --zettel-top-default: #7a6e52;
+  --zettel-top-kode: #3a6a4a;
+  --zettel-top-historie: #6a4a2a;
+  --zettel-top-journal: #4a5a7a;
+  --zettel-text: #e8e0cc;
+  --zettel-muted: #7a6e52;
+  --zettel-link: #7a9e6a;
+  --zettel-tag-bg: #2a2820;
+  --zettel-tag-text: #8a8070;
+  --zettel-code-bg: #141210;
+  --zettel-code-text: #b8d090;
+  --zettel-rule: #3a3428;
+  --zettel-meta-bg: #2a2018;
+  --zettel-meta-border: #5a4030;
+  --zettel-meta-text: #c8a070;
+}
+
+/* ================================================
+   ARTIKEL-LAYOUT — hvert Zettel som kartotekskort
+   ================================================ */
+
+article.popover-hint,
+.center > article {
+  background: var(--zettel-bg);
+  border: 0.5px solid var(--zettel-border);
+  border-top: 3px solid var(--zettel-top-default);
+  border-radius: 0 0 4px 4px;
+  padding: 0 !important;
+  font-family: var(--zettel-font-serif);
+  max-width: 780px;
+}
+
+/* Korttype-farver via tags */
+article.tag-python,
+article.tag-lua,
+article.tag-programmering {
+  border-top-color: var(--zettel-top-kode) !important;
+}
+
+article.tag-historie,
+article.tag-danmark {
+  border-top-color: var(--zettel-top-historie) !important;
+}
+
+article.tag-journal,
+article.tag-fleeting {
+  border-top-color: var(--zettel-top-journal) !important;
+}
+
+/* ================================================
+   KORTETS HOVED — titel + ID
+   ================================================ */
+
+article h1 {
+  font-family: var(--zettel-font-serif) !important;
+  font-size: 1.25rem !important;
+  font-weight: 700 !important;
+  color: var(--zettel-text) !important;
+  border-bottom: 0.5px solid var(--zettel-rule) !important;
+  padding: 0.75rem 1.25rem !important;
+  margin: 0 !important;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+/* Zettel-ID vist som lille monospace-tekst */
+article h1::after {
+  content: attr(data-id);
+  font-family: var(--zettel-font-mono);
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--zettel-muted);
+  white-space: nowrap;
+  margin-top: 4px;
+  flex-shrink: 0;
+}
+
+/* ================================================
+   BRØDTEKST
+   ================================================ */
+
+article .markdown-body,
+article > .content > * {
+  padding: 0.75rem 1.25rem;
+  font-family: var(--zettel-font-serif);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  color: var(--zettel-text);
+}
+
+article p {
+  font-family: var(--zettel-font-serif);
+  color: var(--zettel-text);
+  line-height: 1.75;
+}
+
+/* ================================================
+   KODEBLOKKE — mørk baggrund, grøn tekst
+   ================================================ */
+
+article pre {
+  background: var(--zettel-code-bg) !important;
+  color: var(--zettel-code-text) !important;
+  font-family: var(--zettel-font-mono) !important;
+  font-size: 0.85rem !important;
+  line-height: 1.65 !important;
+  padding: 0.9rem 1.25rem !important;
+  border-radius: 0 !important;
+  margin: 0 !important;
+  border-left: 3px solid var(--zettel-top-kode) !important;
+}
+
+article code {
+  font-family: var(--zettel-font-mono) !important;
+  font-size: 0.85em;
+  background: var(--zettel-tag-bg);
+  color: var(--zettel-tag-text);
+  padding: 1px 5px;
+  border-radius: 2px;
+}
+
+article pre code {
+  background: none !important;
+  color: inherit !important;
+  padding: 0 !important;
+}
+
+/* ================================================
+   TAGS — kartotekskort-mærker
+   ================================================ */
+
+.tags > li > a,
+article .tag-link {
+  font-family: var(--zettel-font-mono) !important;
+  font-size: 0.72rem !important;
+  background: var(--zettel-tag-bg) !important;
+  border: 0.5px solid var(--zettel-border) !important;
+  color: var(--zettel-tag-text) !important;
+  padding: 2px 8px !important;
+  border-radius: 2px !important;
+  letter-spacing: 0.03em;
+  text-decoration: none !important;
+}
+
+.tags > li > a:hover,
+article .tag-link:hover {
+  border-color: var(--zettel-muted) !important;
+}
+
+/* ================================================
+   LINKS — arkivgrøn understregning
+   ================================================ */
+
+article a {
+  color: var(--zettel-link) !important;
+  text-decoration: none !important;
+  border-bottom: 0.5px dotted var(--zettel-link);
+}
+
+article a:hover {
+  border-bottom-style: solid;
+}
+
+/* ================================================
+   SKILLELINJER
+   ================================================ */
+
+article hr {
+  border: none !important;
+  border-top: 0.5px solid var(--zettel-rule) !important;
+  margin: 0 1.25rem !important;
+}
+
+/* ================================================
+   OVERSIGTSSIDE — kort i gitter
+   ================================================ */
+
+.page-listing .section-li,
+.explorer-content .folder-outer {
+  background: var(--zettel-bg);
+  border: 0.5px solid var(--zettel-border);
+  border-top: 3px solid var(--zettel-top-default);
+  border-radius: 0 0 4px 4px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 10px;
+  font-family: var(--zettel-font-serif);
+  transition: border-color 0.15s;
+}
+
+.page-listing .section-li:hover {
+  border-color: var(--zettel-muted);
+}
+
+.page-listing .section-li h3 {
+  font-family: var(--zettel-font-serif) !important;
+  font-size: 1rem !important;
+  color: var(--zettel-text) !important;
+  margin: 0 0 0.3rem !important;
+}
+
+.page-listing .section-li .section-preview {
+  font-size: 0.85rem;
+  color: var(--zettel-muted);
+  font-family: var(--zettel-font-serif);
+  line-height: 1.5;
+}
+
+/* ================================================
+   METADATA-BLOK (frontmatter felter)
+   ================================================ */
+
+.content-meta {
+  font-family: var(--zettel-font-mono) !important;
+  font-size: 0.75rem !important;
+  color: var(--zettel-muted) !important;
+  padding: 0.4rem 1.25rem !important;
+  border-bottom: 0.5px solid var(--zettel-rule);
+  letter-spacing: 0.03em;
+}
+
+/* ================================================
+   SIDETITEL & NAVIGATION
+   ================================================ */
+
+.page-title {
+  font-family: var(--zettel-font-serif) !important;
+  letter-spacing: -0.01em;
+}
+
+#quartz-body .left .quartz-title .page-title {
+  font-family: var(--zettel-font-serif) !important;
+  font-size: 1.3rem !important;
+}
+
