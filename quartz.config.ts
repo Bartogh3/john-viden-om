@@ -13,11 +13,11 @@ const config: QuartzConfig = {
     enableSPA: true,
     enablePopovers: true,
     analytics: {
-      provider: "plausible",
+      provider: "none",
     },
     locale: "da-DK",
-    baseUrl: "bartogh3.github.io",
-    ignorePatterns: ["private", "content/skabeloner/", ".obsidian"],
+    baseUrl: "bartogh3.github.io/john-viden-om",
+    ignorePatterns: ["private", "**/skabeloner", ".obsidian"],
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",

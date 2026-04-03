@@ -1,6 +1,7 @@
 ---
 id: {{date:YYYYMMDDHHmm}}  
-titel:  
+titel: 
+date: {{date:YYYY-MM-DD}}
 sprog: python # eller: lua  
 tags: [programmering, python]  
 relateret: []  

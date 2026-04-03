@@ -1,3 +1,8 @@
+---
+id: 202604030129
+titel: MOC Python
+date: 2026-04-03
+---
 # MOC-Python
 
 ## Formål

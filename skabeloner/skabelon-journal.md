@@ -1,5 +1,6 @@
 ---
-dato: {{date:YYYY-MM-DD}}  
+titel:
+date: {{date:YYYY-MM-DD}}  
 tags: [journal, fleeting]  
 ---
 

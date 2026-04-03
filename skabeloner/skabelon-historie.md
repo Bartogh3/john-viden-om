@@ -1,6 +1,7 @@
 ---
 id: {{date:YYYYMMDDHHmm}}  
 titel:  
+date: {{date:YYYY-MM-DD}}
 periode: <årstal eller periode, f.eks. 1864>  
 tags: [historie, danmark]  
 personer: []  
