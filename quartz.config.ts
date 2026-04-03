@@ -16,8 +16,8 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "da-DK",
-    baseUrl: "bartogh3.github.io/john-viden-om",
-    ignorePatterns: ["private", "content/skabeloner", ".obsidian"],
+    baseUrl: "bartogh3.github.io",
+    ignorePatterns: ["private", "content/skabeloner/", ".obsidian"],
     defaultDateType: "modified",
     theme: {
       fontOrigin: "googleFonts",
